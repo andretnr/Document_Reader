@@ -1,0 +1,44 @@
+swagger: "2.0"
+info:
+  description: "Doc Read"
+  version: "1.0.0"
+  title: "Upload Service"
+host: "localhost"
+basePath: "/"
+tags:
+  - name: "doc-read"
+    description: "doc-read Structure"
+    externalDocs:
+      description: "Find out more"
+      url: "http://swagger.io"
+schemes:
+  - "https"
+  - "http"
+paths:
+
+  /uploadFile:
+    post:
+      tags:
+        - "upload"
+      summary: "Upload Archive"
+
+      description: ""
+      operationId: "upload"
+      parameters:
+        - in: formData
+          name: file
+          type: file
+          description: The file to upload.
+      responses:
+        '200':
+          description: "successful upload"
+          schema:
+            type: string
+        '404':
+          description: "upload failure"
+          schema:
+            type: string
+
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"
